@@ -15,6 +15,8 @@ const int rifle_choice_ct_famas = 1;
 const int rifle_choice_ct_m4a4 = 2;
 const int rifle_choice_ct_m4a1_s = 3;
 const int rifle_choice_ct_aug = 4;
+const int rifle_choice_ct_ak47 = 2;
+const int rifle_choice_ct_sg553 = 3;
 
 const int rifle_choice_t_galil = 1;
 const int rifle_choice_t_ak47 = 2;
@@ -735,6 +737,8 @@ public void GiveWeaponMenuCT(int client) {
     AddMenuInt(menu, rifle_choice_ct_m4a4, "M4A4");
     AddMenuInt(menu, rifle_choice_ct_m4a1_s, "M4A1-S");
     AddMenuInt(menu, rifle_choice_ct_aug, "Aug");
+    AddMenuInt(menu, rifle_choice_ct_ak47, "AK47");
+    AddMenuInt(menu, rifle_choice_ct_sg553, "SG553");
     DisplayMenu(menu, client, MENU_TIME_LENGTH);
 }
 
