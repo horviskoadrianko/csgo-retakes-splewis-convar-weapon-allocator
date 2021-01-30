@@ -498,7 +498,7 @@ public void WeaponAllocator(ArrayList tPlayers, ArrayList ctPlayers, Bombsite bo
                 awp_given = awp_given + 1;
             } else {
                 int rifle_choice_ct = g_RifleChoiceCT[client];
-                primary = "weapon_m4a1";
+                primary = "weapon_m4a4";
                 switch(rifle_choice_ct)
                 {
                     case rifle_choice_ct_famas:
@@ -507,6 +507,8 @@ public void WeaponAllocator(ArrayList tPlayers, ArrayList ctPlayers, Bombsite bo
                         primary = "weapon_m4a1_silencer";
                     case rifle_choice_ct_aug:
                         primary = "weapon_aug";
+                    case rifle_choice_t_ak47:
+                        primary = "weapon_ak47";
                 }
             }
         }
