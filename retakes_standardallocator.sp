@@ -393,6 +393,14 @@ public void WeaponAllocator(ArrayList tPlayers, ArrayList ctPlayers, Bombsite bo
                 primary = "weapon_ak47";
                 switch(rifle_choice_t)
                 {
+                    case rifle_choice_ct_famas:
+                        primary = "weapon_famas";
+                    case rifle_choice_ct_m4a1_s:
+                        primary = "weapon_m4a1_silencer";
+                    case rifle_choice_ct_aug:
+                        primary = "weapon_aug";
+                    case rifle_choice_ct_m4a4:
+                        primary = "weapon_m4a1";
                     case rifle_choice_t_galil:
                         primary = "weapon_galilar";
                     case rifle_choice_t_sg553:
@@ -498,7 +506,7 @@ public void WeaponAllocator(ArrayList tPlayers, ArrayList ctPlayers, Bombsite bo
                 awp_given = awp_given + 1;
             } else {
                 int rifle_choice_ct = g_RifleChoiceCT[client];
-                primary = "weapon_m4a4";
+                primary = "weapon_m4a1";
                 switch(rifle_choice_ct)
                 {
                     case rifle_choice_ct_famas:
@@ -509,6 +517,10 @@ public void WeaponAllocator(ArrayList tPlayers, ArrayList ctPlayers, Bombsite bo
                         primary = "weapon_aug";
                     case rifle_choice_t_ak47:
                         primary = "weapon_ak47";
+                    case rifle_choice_t_galil:
+                        primary = "weapon_galilar";
+                    case rifle_choice_t_sg553:
+                        primary = "weapon_sg556";
                 }
             }
         }
@@ -733,21 +745,26 @@ public int MenuHandler_PISTOL_T(Handle menu, MenuAction action, int param1, int 
 public void GiveWeaponMenuCT(int client) {
     Handle menu = CreateMenu(MenuHandler_RIFLE_CT);
     SetMenuTitle(menu, "Select a CT rifle:");
-    AddMenuInt(menu, rifle_choice_ct_famas, "Famas");
+    AddMenuInt(menu, rifle_choice_t_ak47, "AK47");
     AddMenuInt(menu, rifle_choice_ct_m4a4, "M4A4");
     AddMenuInt(menu, rifle_choice_ct_m4a1_s, "M4A1-S");
     AddMenuInt(menu, rifle_choice_ct_aug, "Aug");
-    AddMenuInt(menu, rifle_choice_t_ak47, "AK47");
     AddMenuInt(menu, rifle_choice_t_sg553, "SG553");
+    AddMenuInt(menu, rifle_choice_ct_famas, "Famas");
+    AddMenuInt(menu, rifle_choice_t_galil, "Galil");
     DisplayMenu(menu, client, MENU_TIME_LENGTH);
 }
 
 public void GiveWeaponMenuT(int client) {
     Handle menu = CreateMenu(MenuHandler_RIFLE_T);
     SetMenuTitle(menu, "Select a T rifle:");
-    AddMenuInt(menu, rifle_choice_t_galil, "Galil");
     AddMenuInt(menu, rifle_choice_t_ak47, "AK47");
+    AddMenuInt(menu, rifle_choice_ct_m4a4, "M4A4");
+    AddMenuInt(menu, rifle_choice_ct_m4a1_s, "M4A1-S");
+    AddMenuInt(menu, rifle_choice_ct_aug, "Aug");
     AddMenuInt(menu, rifle_choice_t_sg553, "SG553");
+    AddMenuInt(menu, rifle_choice_ct_famas, "Famas");
+    AddMenuInt(menu, rifle_choice_t_galil, "Galil");
     DisplayMenu(menu, client, MENU_TIME_LENGTH);
 }
 
